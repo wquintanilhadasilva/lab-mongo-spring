@@ -1,14 +1,18 @@
 package com.example.mongo.demo.docs;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+@Getter
+@Setter
 public class Customer {
 
     @Id
     public String id;
 
-    public String firstName;
-    public String lastName;
+    private String firstName;
+    private String lastName;
 
     public Customer() {}
 

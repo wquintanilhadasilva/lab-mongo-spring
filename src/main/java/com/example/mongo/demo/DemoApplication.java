@@ -31,6 +31,9 @@ public class DemoApplication implements CommandLineRunner {
 		// save a couple of customers
 		repository.save(new Customer("Alice", "Smith"));
 		repository.save(new Customer("Bob", "Smith"));
+		var c = new Customer("Cliente", "Teste");
+		c.setId("1");
+		repository.save(c);
 
 		// fetch all customers
 		System.out.println("Customers found with findAll():");

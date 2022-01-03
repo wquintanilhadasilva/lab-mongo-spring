@@ -76,7 +76,6 @@ public class DemoApplication implements CommandLineRunner {
 					.ugr("UGR " + i)
 					.valor(Double.parseDouble("20.00"))
 					.build();
-			s.buildId();
 			siafNCRepository.save(s);
 
 		}

@@ -12,9 +12,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class SiafNC {
 
-    @Id
-    CompositeKey id;
-
     Long numero;
     LocalDate dataEmissao;
     String ugEmitente;
@@ -28,8 +25,11 @@ public class SiafNC {
     String pi;
     Double valor;
 
-    public void buildId(){
-        this.id = new CompositeKey(this.numero, this.dataEmissao);
+    @Id
+    public String getId() {
+        return String.format(
+                "numero=%s:dataEmissao='%s'",
+                numero, dataEmissao);
     }
 
     @Getter
@@ -52,7 +52,7 @@ public class SiafNC {
     public String toString() {
         return String.format(
                 "SiafNC[id=%s, dataEmissao='%s', ugEmitente='%s']",
-                id, dataEmissao, ugEmitente);
+                getId(), dataEmissao, ugEmitente);
     }
 
 }
